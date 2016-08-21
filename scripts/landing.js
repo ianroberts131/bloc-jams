@@ -9,9 +9,7 @@ var animatePoints = function(points) {
         points[index].style.WebkitTransform = "rotate(360deg)";
     };
     
-    for (var i = 0; i < points.length; i++) {
-        revealPoint(i);
-    };
+    forEach(points, revealPoint);
     
 };
 
