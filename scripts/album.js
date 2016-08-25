@@ -28,6 +28,21 @@ var albumMarconi = {
 	]
 };
 
+var albumNorris = {
+	title: 'Chicken',
+	artist: 'Norris Roberts',
+	label: 'Puppy Dawgs',
+	year: '2016',
+	albumArtUrl: 'assets/images/album_covers/03.png',
+	songs: [
+		{ title: 'Lets go on a walk', duration: '5:00' },
+		{ title: 'When are you coming home?', duration: '60:00' },
+		{ title: 'Nap time', duration: '120:00' },
+		{ title: 'Please give me a treat', duration: '4:00' },
+		{ title: 'Play time', duration: '3:00' }
+	]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
 	var template = 
 			'<tr class="album-view-song-item">'
@@ -62,3 +77,17 @@ var setCurrentAlbum = function(album) {
 window.onload = function() {
 	setCurrentAlbum(albumPicasso);
 };
+
+var albums = [albumPicasso, albumMarconi, albumNorris];
+
+var albumIndex = 0;
+
+document.getElementsByClassName("album-cover-art")[0].addEventListener('click', function() {
+	albumIndex += 1;
+	if (albumIndex < albums.length) {
+		setCurrentAlbum(albums[albumIndex]);
+	} else {
+		setCurrentAlbum(albums[0]);
+		albumIndex = 0;
+	};
+});
