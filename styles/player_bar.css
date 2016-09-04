@@ -64,6 +64,11 @@
 	font-weight: 300;
 }
 
+.player-bar .currently-playing .song-name,
+.player-bar .currently-playing .artist-song-mobile {
+	top: 1.1rem;
+}
+
 .player-bar .currently-playing .artist-name {
 	bottom: 1.1rem;
 }
